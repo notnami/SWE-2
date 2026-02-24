@@ -1,6 +1,6 @@
 const searchInput = document.getElementById("searchInput");
 const snackList = document.getElementById("snackList");
-const addInput = document.getElementById("addInput");
+const addInput = document.getElementById("food-name");
 const addBtn = document.getElementById("add-btn");
 
 // Sample snack data (replace with API later)
@@ -52,7 +52,7 @@ function renderList(filter = "") {
     }
 }
 
-// Add snack to list
+// Add snack
 addBtn.addEventListener("click", () => {
     const newSnack = addInput.value.trim();
 
@@ -78,7 +78,7 @@ function toggleFavorite(snack) {
     renderList(searchInput.value);
 }
 
-// Search listener
+// Search
 searchInput.addEventListener("input", () => {
     renderList(searchInput.value);
 });
