@@ -72,7 +72,7 @@ addInput.addEventListener("keypress", (e) => {
     }
 });
 
-// Toggle favorite
+//  favorite
 function toggleFavorite(snack) {
     if (favorites.includes(snack)) {
         favorites = favorites.filter(item => item !== snack);
