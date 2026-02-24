@@ -1,0 +1,102 @@
+body {
+    background-image: linear-gradient(to right, rgb(76, 244, 76), orange);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin: auto;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid black;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px;
+    margin: auto;
+}
+
+.navbar a:hover {
+    border-bottom: 3px solid green;
+}
+
+/* Page header */
+header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Search */
+.search-box input {
+    width: 300px;
+    padding: 10px;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+
+/* Button */
+.search-box button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 95%;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: darkgreen;
+}
+
+/* Results */
+.results {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.results li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    font-size: 1.1rem;
+}
+
+/* Star */
+.star {
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.star.fav {
+    color: gold;
+}

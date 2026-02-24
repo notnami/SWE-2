@@ -1,0 +1,96 @@
+body {
+    background-image: linear-gradient(to right, rgb(76, 244, 76), orange);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:black;
+    margin: auto;
+    text-align: center;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid black;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px;
+    margin: auto;
+}
+
+.navbar a:hover {
+    border-bottom: 3px solid green;
+}
+
+/* Sections (cards) */
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Page header */
+header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Sections (cards) */
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Form */
+.login label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.login input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 6px;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+
+/* Button */
+.login button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: darkgreen;
+}

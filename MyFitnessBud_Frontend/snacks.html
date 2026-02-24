@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/snacks.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Snacks | MyFitnessBud</title>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="workouts.html">Workouts</a>
+            <a href="calories.html">Calories</a>
+            <a href="snacks.html">Snacks</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="login.html" class="logout">Logout</a>
+    </nav>
+
+    <header>
+        <h1>Snack Finder</h1>
+        <p>Search snacks and save your favorites.</p>
+    </header>
+
+    <!-- Search and Input -->
+    <section class="search-box">
+        <label for="food-search">Search for snacks</label>
+        <input type="text" id="food-name" placeholder="e.g. Apple">
+
+        <label for="food-name">Add a snack</label>
+        <input type="text" id="food-name" placeholder="e.g. Banana" />
+
+        <button id="add-btn">Add Entry</button>
+    </section>
+
+    <!-- Results -->
+    <section class="results">
+        <ul id="snackList"></ul>
+    </section>
+
+    <script src="js/snacks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
