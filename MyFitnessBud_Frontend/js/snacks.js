@@ -1,5 +1,7 @@
 const searchInput = document.getElementById("searchInput");
 const snackList = document.getElementById("snackList");
+const addInput = document.getElementById("addInput");
+const addBtn = document.getElementById("add-btn");
 
 // Sample snack data (replace with API later)
 const snacks = [
@@ -49,6 +51,20 @@ function renderList(filter = "") {
         snackList.innerHTML = "<li>No snacks found</li>";
     }
 }
+
+// Add snack to list
+addBtn.addEventListener("click", () => {
+    const newSnack = addInput.value.trim();
+
+    if (newSnack === "") return;
+
+    if (!snacks.includes(newSnack)) {
+        snacks.push(newSnack);
+    }
+
+    addInput.value = "";
+    renderList(searchInput.value);
+});
 
 // Toggle favorite
 function toggleFavorite(snack) {
