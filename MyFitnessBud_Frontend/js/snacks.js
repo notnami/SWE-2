@@ -66,6 +66,12 @@ addBtn.addEventListener("click", () => {
     renderList(searchInput.value);
 });
 
+addInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        addBtn.click();
+    }
+});
+
 // Toggle favorite
 function toggleFavorite(snack) {
     if (favorites.includes(snack)) {
