@@ -1,0 +1,6 @@
+@MyFitnessBudAPI_HostAddress = http://localhost:5057
+
+GET {{MyFitnessBudAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
