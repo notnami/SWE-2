@@ -95,6 +95,7 @@ __Code Review & Collaboration__
 
 __Versioning Approach__
 The project follows a simplified Semantic Versioning (SemVer) model:
+
 `MAJOR.MINOR.PATCH`
 - MAJOR: Breaking architectural or API changes
 - MINOR: New features (e.g., Favorites page)
