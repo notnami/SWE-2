@@ -1,4 +1,4 @@
 # MyFitnessBud
-## Your fitness and nutrition companion.
+__Your fitness and nutrition companion.__
 
 - Placeholder text.
