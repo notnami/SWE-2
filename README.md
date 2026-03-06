@@ -1,6 +1,67 @@
 # MyFitnessBud
 __Your fitness and nutrition companion.__
 
+### Product Vision
+MyFitnessBud is a web-based snack discovery and food transparency platform designed to help users search for snacks, filter allergens, view ingredient details, and save favorites securely. The system aims to promote informed dietary decisions, especially for users with allergies or dietary restrictions.
+
+The product focuses on:
+- Snack search and filtering
+- Ingredient transparency
+- User personalization via saved favorites
+- Secure account management
+---
+### Project Goals
+- Implement snack search by keyword
+- Implement allergen filtering
+- Display full ingredient lists
+- Allow users to save favorites
+- Implement authentication system
+---
+### Release Plan
+__Release 1__
+- Static snack list
+- Search functionality
+- Basic UI
+
+__Release 2__
+- Allergen filtering
+- Ingredient detail modal
+- Workout page
+
+__Release 3__
+- Favorites feature
+- Local storage persistence
+
+__Release 4 (Final)__
+- Authentication
+- Session management
+- UI improvements
+- Bug fixes
+---
+### Definition of Ready
+A story is ready when:
+- It has clear description
+- Acceptance criteria defined
+- Dependencies identified
+- Estimated effort assigned
+---
+### Definition of Done 
+A story is done when:
+- Code is written
+- Tested manually
+- No console errors
+- Pushed to GitHub
+- UI reviewed
+---
+### Architectural Design 
+Architecture Style: Client-side Web Application (Frontend-based)
+
+Components:
+- UI Layer (HTML/CSS/Bootstrap)
+- Logic Layer (JavaScript)
+- Storage Layer (LocalStorage)\
+\
+`User -> Browser -> JS Logic -> LocalStorage`
 ---
 ### Development Environment (Tech Stack)
 __Frontend__
