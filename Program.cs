@@ -1,29 +1,35 @@
-// Program.cs
-using Microsoft.AspNetCore.Identity;
+using MyFitnessBud.Data;
 using Microsoft.EntityFrameworkCore;
-using MyFitnessBudAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=myfitnessbud.db"));
-
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-
-builder.Services.AddAuthentication();
-builder.Services.AddAuthorization();
-
-builder.Services.AddControllers();
-
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-app.UseAuthentication();
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseRouting();
+
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
 
 app.Run();

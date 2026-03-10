@@ -1,24 +1,23 @@
-// Models/Favorite.cs
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MyFitnessBudAPI.Models
+namespace MyFitnessBud.Models
 {
     public class Favorite
     {
         [Key]
-        public int Id { get; set; }
+        public int FavoriteId { get; set; }
 
         [Required]
-        public string OpenFoodFactsId { get; set; }
+        public int UserId { get; set; }
 
         [Required]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public string ProductCode { get; set; } // OpenFoodFacts barcode
 
-        [Required]
-        public string UserId { get; set; }
+        public DateTime SavedAt { get; set; } = DateTime.UtcNow;
 
         [ForeignKey("UserId")]
-        public virtual ApplicationUser User { get; set; }
+        public User User { get; set; }
     }
 }
