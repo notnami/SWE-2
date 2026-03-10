@@ -8,7 +8,12 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-    
+
+builder.Services.AddHttpClient<OpenFoodFactsClient>(client =>
+{
+    client.BaseAddress = new Uri("https://world.openfoodfacts.net/");
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("MyFitnessBud/1.0 monciermt@etsu.edu");
+}); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +30,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
-
+app.MapControllers();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
