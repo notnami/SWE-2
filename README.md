@@ -258,7 +258,14 @@ __Workouts Page__
 In the current iteration of the project the workouts page is a placeholder for the future workout functionality. 
 
 __Page Wireframes__ 
+__Home & Calorie Pages__
+![Home & Calories][Wireframes\Home&CalorieWireframe.jpeg]
 
+__Snacks & Favorites Pages__
+![Home & Calories][Wireframes\Snacks&FavoritesWireframe.jpeg]
+
+__Login & Workout Pages__
+![Home & Calories][Wireframes\Login&WorkoutWireframe.jpeg]
 
 
 __UX Design Decisions__
