@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loggedInUser = localStorage.getItem("loggedInUser");
 
     const logoutLink = document.querySelector(".logout");
+    const accountMsg = document.querySelector("#already");
     const signUpBtn = document.querySelector(".btn-primary");
     const loginBtn = document.querySelector(".btn-secondary");
     const header = document.querySelector("header h1");
@@ -17,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         header.textContent = `Welcome back, ${loggedInUser}!`;
         subHeader.textContent = `Review your account statistics or continue to the links above.`;
 
-        // Hide signup/login buttons
+        // Hide signup/login buttons and other things
+        accountMsg.style.display = "none";
         signUpBtn.style.display = "none";
         loginBtn.style.display = "none";
     } else {
