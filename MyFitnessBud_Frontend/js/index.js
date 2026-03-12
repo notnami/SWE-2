@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const signUpBtn = document.querySelector(".btn-primary");
     const loginBtn = document.querySelector(".btn-secondary");
     const header = document.querySelector("header h1");
-    const subHeader = document.querySelector("header p")
+    const subHeader = document.querySelector("header p");
+    
 
     // ----------------------------
     // USER STATE HANDLING
