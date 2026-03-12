@@ -30,8 +30,9 @@ body {
 
 /* Page header */
 header {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 header h1 {
@@ -116,4 +117,9 @@ section {
 
 .star.fav {
     color: gold;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
 }

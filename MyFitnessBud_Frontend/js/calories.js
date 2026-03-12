@@ -1,57 +1,74 @@
-// Get elements
-const foodInput = document.getElementById("food-name");
-const calorieInput = document.getElementById("calories");
-const addBtn = document.getElementById("add-btn");
-const entryList = document.getElementById("entry-list");
-const totalCaloriesEl = document.getElementById("total-calories");
+document.addEventListener("DOMContentLoaded", function() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    
+    const foodInput = document.getElementById("food-name");
+    const calorieInput = document.getElementById("calories");
+    const addBtn = document.getElementById("add-btn");
+    const entryList = document.getElementById("entry-list");
+    const totalCaloriesEl = document.getElementById("total-calories");
+    const outLink = document.querySelector(".logoutLink");
 
-// Load saved data
-let entries = JSON.parse(localStorage.getItem("calorieEntries")) || [];
-let totalCalories = 0;
+    // Load saved data
+    let entries = JSON.parse(localStorage.getItem("calorieEntries")) || [];
+    let totalCalories = 0;
 
-// Initialize page
-function init() {
-    entryList.innerHTML = "";
-    totalCalories = 0;
+    // Initialize page
+    function init() {
+        entryList.innerHTML = "";
+        totalCalories = 0;
 
-    entries.forEach(entry => {
-        addEntryToList(entry.food, entry.calories);
-        totalCalories += entry.calories;
-    });
+        entries.forEach(entry => {
+            addEntryToList(entry.food, entry.calories);
+            totalCalories += entry.calories;
+        });
 
-    totalCaloriesEl.textContent = totalCalories;
-}
-
-// Add new entry
-addBtn.addEventListener("click", () => {
-    const food = foodInput.value.trim();
-    const calories = parseInt(calorieInput.value);
-
-    if (food === "" || isNaN(calories) || calories <= 0) {
-        alert("Please enter a valid food name and calorie amount.");
-        return;
+        totalCaloriesEl.textContent = totalCalories;
     }
 
-    const entry = { food, calories };
-    entries.push(entry);
+    // Add new entry
+    addBtn.addEventListener("click", () => {
+        const food = foodInput.value.trim();
+        const calories = parseInt(calorieInput.value);
 
-    localStorage.setItem("calorieEntries", JSON.stringify(entries));
+        if (food === "" || isNaN(calories) || calories <= 0) {
+            alert("Please enter a valid food name and calorie amount.");
+            return;
+        }
 
-    addEntryToList(food, calories);
+        const entry = { food, calories };
+        entries.push(entry);
 
-    totalCalories += calories;
-    totalCaloriesEl.textContent = totalCalories;
+        localStorage.setItem("calorieEntries", JSON.stringify(entries));
 
-    foodInput.value = "";
-    calorieInput.value = "";
+        addEntryToList(food, calories);
+
+        totalCalories += calories;
+        totalCaloriesEl.textContent = totalCalories;
+
+        foodInput.value = "";
+        calorieInput.value = "";
+    });
+
+    // Helper function
+    function addEntryToList(food, calories) {
+        const li = document.createElement("li");
+        li.textContent = `${food} - ${calories} cal`;
+        entryList.appendChild(li);
+    }
+
+    outLink.addEventListener("click", function (e) {
+
+        if (loggedInUser) {
+            e.preventDefault(); // Prevent immediate navigation
+
+            localStorage.removeItem("loggedInUser");
+
+            alert("You have been logged out.");
+
+            window.location.href = "login.html";
+        }
+    });
+
+    // Initialize on load
+    init();
 });
-
-// Helper function
-function addEntryToList(food, calories) {
-    const li = document.createElement("li");
-    li.textContent = `${food} - ${calories} cal`;
-    entryList.appendChild(li);
-}
-
-// Initialize on load
-init();

@@ -21,7 +21,9 @@ body {
 }
 
 header {
-    margin: 30px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 /* Favorites container */
@@ -53,4 +55,9 @@ header {
     border-radius: 6px;
     padding: 4px 8px;
     cursor: pointer;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
 }

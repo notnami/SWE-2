@@ -1,37 +1,55 @@
-const favoritesList = document.getElementById("favoritesList");
+document.addEventListener("DOMContentLoaded", function() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
 
-// Load favorites from localStorage
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const favoritesList = document.getElementById("favoritesList");
+    const outLink = document.querySelector(".logoutLink");
 
-function renderFavorites() {
-    favoritesList.innerHTML = "";
+    // Load favorites from localStorage
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    if (favorites.length === 0) {
-        favoritesList.innerHTML = "<li>No favorites added yet.</li>";
-        return;
+    function renderFavorites() {
+        favoritesList.innerHTML = "";
+
+        if (favorites.length === 0) {
+            favoritesList.innerHTML = "<li>No favorites added yet.</li>";
+            return;
+        }
+
+        favorites.forEach((snack, index) => {
+            const li = document.createElement("li");
+            li.textContent = snack;
+
+            const removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.classList.add("remove-btn");
+
+            removeBtn.addEventListener("click", () => {
+                removeFavorite(index);
+            });
+
+            li.appendChild(removeBtn);
+            favoritesList.appendChild(li);
+        });
     }
 
-    favorites.forEach((snack, index) => {
-        const li = document.createElement("li");
-        li.textContent = snack;
+    function removeFavorite(index) {
+        favorites.splice(index, 1);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        renderFavorites();
+    }
 
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
-        removeBtn.classList.add("remove-btn");
+    outLink.addEventListener("click", function (e) {
 
-        removeBtn.addEventListener("click", () => {
-            removeFavorite(index);
-        });
+        if (loggedInUser) {
+            e.preventDefault(); // Prevent immediate navigation
 
-        li.appendChild(removeBtn);
-        favoritesList.appendChild(li);
+            localStorage.removeItem("loggedInUser");
+
+            alert("You have been logged out.");
+
+            window.location.href = "login.html";
+        }
     });
-}
 
-function removeFavorite(index) {
-    favorites.splice(index, 1);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
     renderFavorites();
-}
-
-renderFavorites();
+});
