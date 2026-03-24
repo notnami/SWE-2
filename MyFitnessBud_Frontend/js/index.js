@@ -2,35 +2,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loggedInUser = localStorage.getItem("loggedInUser");
 
-    const logoutLink = document.querySelector(".logout");
+    const outLink = document.querySelector(".logoutLink");
+    const logOut = document.querySelector(".main");
+    const logIn = document.querySelector(".mainLogin");
     const signUpBtn = document.querySelector(".btn-primary");
     const loginBtn = document.querySelector(".btn-secondary");
     const header = document.querySelector("header h1");
-    const subHeader = document.querySelector("header p")
+    const subHeader = document.querySelector("header p");
+    let loginTime = new Date();
 
     // ----------------------------
     // USER STATE HANDLING
     // ----------------------------
 
+    function updateDisplay() {
+        let now = new Date();
+        document.getElementById("currentDate").textContent = now.toLocaleString();
+
+        let elapsed = now - loginTime;
+        let seconds = Math.floor((elapsed / 1000) % 60);
+        let minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+        let hours = Math.floor((elapsed / (1000 * 60 * 60)));
+
+        document.getElementById("loginDuration").textContent = hours + "h " + minutes + "m " + seconds + "s";
+    }
+
     if (loggedInUser) {
         // User is logged in
         header.textContent = `Welcome back, ${loggedInUser}!`;
-        subHeader.textContent = `Review your account statistics or continue to the links above.`;
+        subHeader.textContent = `Feel free to continue to the links above, and start your health journey!`;
 
-        // Hide signup/login buttons
+        // Hide signup/login buttons and show other things
+        logOut.style.display = "none";
         signUpBtn.style.display = "none";
         loginBtn.style.display = "none";
+        setInterval(updateDisplay, 1000);
+        updateDisplay();
     } else {
         // User is NOT logged in
-        logoutLink.textContent = "Login";
-        logoutLink.href = "login.html";
+        logIn.style.display = "none";
+        outLink.textContent = "Login";
+        outLink.href = "login.html";
     }
 
     // ----------------------------
     // LOGOUT FUNCTIONALITY
     // ----------------------------
 
-    logoutLink.addEventListener("click", function (e) {
+    outLink.addEventListener("click", function (e) {
 
         if (loggedInUser) {
             e.preventDefault(); // Prevent immediate navigation

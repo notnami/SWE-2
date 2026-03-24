@@ -31,8 +31,9 @@ body {
 
 /* Page header */
 header {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 header h1 {
@@ -51,4 +52,9 @@ section {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    font-size: small;
+    text-align: center;
 }
