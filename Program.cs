@@ -1,5 +1,6 @@
 using MyFitnessBud.Data;
 using Microsoft.EntityFrameworkCore;
+using MyFitnessBud.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddHttpClient<OpenFoodFactsClient>(client =>
 {
-    client.BaseAddress = new Uri("https://world.openfoodfacts.net/");
-    client.DefaultRequestHeaders.UserAgent.ParseAdd("MyFitnessBud/1.0 monciermt@etsu.edu");
-}); 
+    client.BaseAddress = new Uri("https://world.openfoodfacts.org/");
+    client.DefaultRequestHeaders.UserAgent.ParseAdd("MyFitnessBud/1.0 (monciermt@etsu.edu)");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
