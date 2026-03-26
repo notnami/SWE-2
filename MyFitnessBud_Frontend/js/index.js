@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----------------------------
 
     signUpBtn.addEventListener("click", function () {
-        window.location.href = "login.html";
+        window.location.href = "signup.html";
     });
 
     loginBtn.addEventListener("click", function () {
