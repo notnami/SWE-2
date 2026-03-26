@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Load existing users
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Check if username already exists
+        const existingUser = users.find(u => u.username === username);
+        if (existingUser) {
+            showMessage("Username already exists. Please choose a different one.");
+            return;
+        }
+
         const user = {
             username: username,
             password: password,
@@ -27,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
             height: Number(height)
         };
 
-        localStorage.setItem("user", JSON.stringify(user));
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("loggedInUser", username);
 
         showMessage("Account created successfully! Redirecting to home page...");
