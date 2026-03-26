@@ -46,28 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // SIGN UP FUNCTION
+    // SIGN UP BUTTON NAVIGATION
     signUpBtn.addEventListener("click", function () {
-
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
-
-        if (username === "" || password === "") {
-            showMessage("Please enter both username and password to sign up.", "danger");
-            return;
-        }
-
-        const user = {
-            username: username,
-            password: password
-        };
-
-        localStorage.setItem("user", JSON.stringify(user));
-
-        showMessage("Account created successfully! You can now log in.", "success");
-
-        usernameInput.value = "";
-        passwordInput.value = "";
+        window.location.href = "signup.html";
     });
 
 });

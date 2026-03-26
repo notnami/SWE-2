@@ -29,8 +29,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (loggedInUser) {
         // User is logged in
-        header.textContent = `Welcome back, ${loggedInUser}!`;
-        subHeader.textContent = `Feel free to continue to the links above, and start your health journey!`;
+        const storedUser = localStorage.getItem("user");
+        let userData = null;
+
+        if (storedUser) {
+            try {
+                userData = JSON.parse(storedUser);
+            } catch (err) {
+                console.error("User data parse failed", err);
+            }
+        }
+
+        if (userData && userData.username === loggedInUser) {
+            header.textContent = `Welcome back, ${userData.username}!`;
+            subHeader.textContent = `Weight: ${userData.weight || "N/A"} lbs | Height: ${userData.height || "N/A"} in`;
+
+            document.getElementById("profileUsername").textContent = `Username: ${userData.username}`;
+            document.getElementById("profileWeight").textContent = `Weight: ${userData.weight || "N/A"} lbs`;
+            document.getElementById("profileHeight").textContent = `Height: ${userData.height || "N/A"} in`;
+        } else {
+            header.textContent = `Welcome back, ${loggedInUser}!`;
+            subHeader.textContent = `Feel free to continue to the links above, and start your health journey!`;
+            document.getElementById("profileUsername").textContent = `Username: ${loggedInUser}`;
+            document.getElementById("profileWeight").textContent = "Weight: (Not set)";
+            document.getElementById("profileHeight").textContent = "Height: (Not set)";
+        }
 
         // Hide signup/login buttons and show other things
         logOut.style.display = "none";
