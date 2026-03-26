@@ -1,52 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/calories.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <title>Calorie Tracking | MyFitnessBud</title>
+    <title>Calories</title>
 </head>
 
 <body>
-    <!-- Navigation -->
+
+    <!-- Navbar -->
     <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="workouts.html">Workouts</a>
-            <a href="calories.html">Calories</a>
-            <a href="snacks.html">Snacks</a>
-            <a href="favorites.html">Favorites</a>
-            <a href="login.html" class="logoutLink">Logout</a>
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="calories.html">Calories</a>
+        <a href="snacks.html">Snacks</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="login.html">Logout</a>
     </nav>
 
-    <!-- Page Title -->
     <header>
-        <h1>Calorie Tracking</h1>
-        <p>Track your daily calorie intake.</p>
+        <h1>Calorie Summary</h1>
+        <p>Your daily calorie balance</p>
     </header>
 
-    <!-- Calorie Input Section -->
-    <section class="calorie-form">
-        <h2>Add Food</h2>
-
-        <label for="food-name">Food Name</label>
-        <input type="text" id="food-name" placeholder="e.g. Apple" />
-
-        <label for="calories">Calories</label>
-        <input type="number" id="calories" placeholder="e.g. 95" />
-
-        <button id="add-btn">Add Entry</button>
+    <section>
+        <h2>Calories Consumed</h2>
+        <p id="consumed">0 kcal</p>
     </section>
 
-    <!-- Calorie List Section -->
-    <section class="calorie-list">
-        <h2>Today’s Intake</h2>
-        <ul id="entry-list"></ul>
-        <p class="total">Total Calories: <span id="total-calories">0</span></p>
+    <section>
+        <h2>Calories Burned</h2>
+        <p id="burned">0 kcal</p>
     </section>
 
-    <footer>2026, The MyFitnessBud Team (Shane Austin, Ishwari Patel, Katherine King, Naomi Gates, and Alexandria Moncier).</footer>
+    <section>
+        <h2>Maintenance Calories (baseed on weight and height)</h2>
+        <p id="maintenance">0 kcal</p>
+    </section>
+
+    <section>
+        <h2>Calorie Deficit</h2>
+        <p id="deficit">0 kcal</p>
+    </section>
 
     <script src="js/calories.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

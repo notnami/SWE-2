@@ -1,74 +1,52 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loggedInUser = localStorage.getItem("loggedInUser");
-    
-    const foodInput = document.getElementById("food-name");
-    const calorieInput = document.getElementById("calories");
-    const addBtn = document.getElementById("add-btn");
-    const entryList = document.getElementById("entry-list");
-    const totalCaloriesEl = document.getElementById("total-calories");
-    const outLink = document.querySelector(".logoutLink");
+// Get elements
+const consumedEl = document.getElementById("consumed");
+const burnedEl = document.getElementById("burned");
+const maintenanceEl = document.getElementById("maintenance");
+const deficitEl = document.getElementById("deficit");
 
-    // Load saved data
-    let entries = JSON.parse(localStorage.getItem("calorieEntries")) || [];
-    let totalCalories = 0;
+// Load data
+let intake = JSON.parse(localStorage.getItem("intake")) || [];
+let workouts = JSON.parse(localStorage.getItem("workouts")) || [];
+let weight = localStorage.getItem("weight") || 60;
 
-    // Initialize page
-    function init() {
-        entryList.innerHTML = "";
-        totalCalories = 0;
+// ------------------
+// CALORIES CONSUMED
+// ------------------
+let totalConsumed = 0;
 
-        entries.forEach(entry => {
-            addEntryToList(entry.food, entry.calories);
-            totalCalories += entry.calories;
-        });
-
-        totalCaloriesEl.textContent = totalCalories;
-    }
-
-    // Add new entry
-    addBtn.addEventListener("click", () => {
-        const food = foodInput.value.trim();
-        const calories = parseInt(calorieInput.value);
-
-        if (food === "" || isNaN(calories) || calories <= 0) {
-            alert("Please enter a valid food name and calorie amount.");
-            return;
-        }
-
-        const entry = { food, calories };
-        entries.push(entry);
-
-        localStorage.setItem("calorieEntries", JSON.stringify(entries));
-
-        addEntryToList(food, calories);
-
-        totalCalories += calories;
-        totalCaloriesEl.textContent = totalCalories;
-
-        foodInput.value = "";
-        calorieInput.value = "";
-    });
-
-    // Helper function
-    function addEntryToList(food, calories) {
-        const li = document.createElement("li");
-        li.textContent = `${food} - ${calories} cal`;
-        entryList.appendChild(li);
-    }
-
-    outLink.addEventListener("click", function (e) {
-
-        if (loggedInUser) {
-            e.preventDefault(); // Prevent immediate navigation
-
-            localStorage.removeItem("loggedInUser");
-
-            alert("You have been logged out.");
-
-            window.location.href = "login.html";
-        }
-    });
-
-    // Initialize on load
-    init();
+intake.forEach(item => {
+    totalConsumed += item.calories;
 });
+
+// ------------------
+// CALORIES BURNED
+// ------------------
+function calculateCalories(met, duration) {
+    const hours = duration / 60;
+    return met * weight * hours;
+}
+
+let totalBurned = 0;
+
+workouts.forEach(workout => {
+    totalBurned += calculateCalories(workout.met, workout.duration);
+});
+
+// ------------------
+// MAINTENANCE CALORIES (BMR estimate)
+// ------------------
+// Simple formula: weight * 22 (basic daily needs)
+let maintenance = weight * 22;
+
+// ------------------
+// DEFICIT CALCULATION
+// ------------------
+let deficit = maintenance + totalBurned - totalConsumed;
+
+// ------------------
+// DISPLAY
+// ------------------
+consumedEl.textContent = Math.round(totalConsumed) + " kcal";
+burnedEl.textContent = Math.round(totalBurned) + " kcal";
+maintenanceEl.textContent = Math.round(maintenance) + " kcal";
+deficitEl.textContent = Math.round(deficit) + " kcal";
