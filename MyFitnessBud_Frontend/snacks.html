@@ -7,40 +7,57 @@
     <title>Snacks | MyFitnessBud</title>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="workouts.html">Workouts</a>
-            <a href="calories.html">Calories</a>
-            <a href="snacks.html">Snacks</a>
-            <a href="favorites.html">Favorites</a>
-            <a href="login.html" class="logoutLink">Logout</a>
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="calories.html">Calories</a>
+        <a href="snacks.html">Snacks</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="login.html" class="logoutLink">Logout</a>
     </nav>
 
     <header>
-        <h1>Snack Finder</h1>
-        <p>Search snacks and save your favorites.</p>
+        <h1>Snack & Calorie Tracker</h1>
+        <p>Search snacks, track intake, and save favorites.</p>
     </header>
 
-    <!-- Search and Input -->
+    <!-- Search -->
     <section class="search-box">
-        <h2>Search/Add Snacks</h2>
-
-        <label for="searchInput">Search for snacks</label>
-        <input type="text" id="searchInput" placeholder="e.g. Apple" />
-
-        <label for="addInput">Add a snack</label>
-        <input type="text" id="food-name" placeholder="e.g. Banana" />
-
-        <button id="add-btn">Add Entry</button>
+        <h2>Search Snacks</h2>
+        <input type="text" id="searchInput" placeholder="Search snacks..." />
     </section>
 
-    <!-- Results -->
+    <!-- Snack List -->
     <section class="results">
+        <h2>Snack List</h2>
         <ul id="snackList"></ul>
     </section>
 
-    <footer>2026, The MyFitnessBud Team (Shane Austin, Ishwari Patel, Katherine King, Naomi Gates, and Alexandria Moncier).</footer>
+    <!-- Add Intake -->
+    <section class="intake-form">
+        <h2>Add What You Ate</h2>
+
+        <input type="text" id="food-name" placeholder="e.g. Chips" />
+        <button id="add-btn">Add Entry</button>
+    </section>
+
+    <!-- Daily Intake -->
+    <section class="daily-intake">
+        <h2>Today's Intake</h2>
+        <ul id="intakeList"></ul>
+    </section>
+
+    <!-- Total Calories -->
+    <section class="total-calories">
+        <h2>Total Calories</h2>
+        <p id="totalCalories">0 kcal</p>
+    </section>
+
+    <footer>
+        2026, MyFitnessBud Team
+    </footer>
 
     <script src="js/snacks.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

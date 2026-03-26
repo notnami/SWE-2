@@ -5,14 +5,13 @@ body {
     margin: auto;
 }
 
-/* Navigation bar */
+/* Navbar */
 .navbar {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
     display: flex;
     justify-content: center;
     gap: 25px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid black;
 }
 
@@ -20,106 +19,80 @@ body {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 6px 10px;
-    margin: auto;
 }
 
 .navbar a:hover {
     border-bottom: 3px solid green;
 }
 
-/* Page header */
+/* Header */
 header {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
+    margin: 20px;
 }
 
-header h1 {
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.1rem;
-}
-
-/* Sections (cards) */
+/* Sections */
 section {
     background-color: rgba(255, 255, 255, 0.9);
     max-width: 500px;
     margin: 20px auto;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Form */
-.search-box label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.search-box input {
+/* Inputs */
+input {
     width: 90%;
     padding: 8px;
-    margin-top: 6px;
-    font-family: inherit;
+    margin-top: 10px;
     border-radius: 6px;
     border: 1px solid #555;
 }
 
 /* Button */
-.search-box button {
-    margin-top: 20px;
+button {
+    margin-top: 10px;
     padding: 10px;
     width: 95%;
-    font-size: 1rem;
-    font-family: inherit;
     background-color: green;
     color: white;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
 }
 
-.search-box button:hover {
-    background-color: darkgreen;
-}
-
-/* Results */
-.results {
-    max-width: 500px;
-    margin: 20px auto;
-    background-color: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.results ul {
+/* List */
+ul {
     list-style: none;
     padding: 0;
 }
 
-.results li {
+li {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #aaa;
-    font-size: 1.1rem;
 }
 
 /* Star */
 .star {
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .star.fav {
     color: gold;
 }
 
-footer {
-    font-size: small;
-    text-align: center;
+/* Delete button */
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
 }
+
+/* Calories */
+.total-calories p {
+    font-size: 1.5rem;
+    font-weight: bold;
+} 
