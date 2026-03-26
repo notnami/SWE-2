@@ -3,7 +3,7 @@ const snackList = document.getElementById("snackList");
 const addInput = document.getElementById("food-name");
 const addBtn = document.getElementById("add-btn");
 
-// If frontend is served separately, use your backend URL here.
+
 // Example: const API_BASE = "https://localhost:5001";
 const API_BASE = "http://localhost:5161";
 
