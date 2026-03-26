@@ -24,16 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const storedUser = localStorage.getItem("user");
+        const users = JSON.parse(localStorage.getItem("users")) || [];
 
-        if (!storedUser) {
+        if (users.length === 0) {
             showMessage("No account found. Please sign up first.", "warning");
             return;
         }
 
-        const parsedUser = JSON.parse(storedUser);
+        const foundUser = users.find(u => u.username === username);
 
-        if (parsedUser.username === username && parsedUser.password === password) {
+        if (!foundUser) {
+            showMessage("Invalid username or password.", "danger");
+            return;
+        }
+
+        if (foundUser.password === password) {
             showMessage("Login successful!", "success");
 
             // Save session state
