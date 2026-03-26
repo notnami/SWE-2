@@ -29,18 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (loggedInUser) {
         // User is logged in
-        const storedUser = localStorage.getItem("user");
-        let userData = null;
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const userData = users.find(u => u.username === loggedInUser);
 
-        if (storedUser) {
-            try {
-                userData = JSON.parse(storedUser);
-            } catch (err) {
-                console.error("User data parse failed", err);
-            }
-        }
-
-        if (userData && userData.username === loggedInUser) {
+        if (userData) {
             header.textContent = `Welcome back, ${userData.username}!`;
             subHeader.textContent = `Weight: ${userData.weight || "N/A"} lbs | Height: ${userData.height || "N/A"} in`;
 
@@ -90,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----------------------------
 
     signUpBtn.addEventListener("click", function () {
-        window.location.href = "login.html";
+        window.location.href = "signup.html";
     });
 
     loginBtn.addEventListener("click", function () {
