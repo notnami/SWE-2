@@ -27,6 +27,11 @@ body {
     border-bottom: 3px solid green;
 }
 
+/* Header */
+header {
+    margin: 20px;
+}
+
 /* Sections */
 section {
     max-width: 500px;
@@ -72,4 +77,9 @@ li {
 .calories p {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
 }
