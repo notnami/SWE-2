@@ -9,7 +9,7 @@ namespace SeleniumTests
     public class BaseTest
     {
         protected IWebDriver driver;
-        private const string BaseUrl = "http://127.0.0.1:5500/MyFitnessBud_Frontend/"; // Adjust to your application URL
+        private const string BaseUrl = "http://localhost:5161/"; // Adjust to your application URL
 
         [SetUp]
         public virtual void Setup()
@@ -30,7 +30,7 @@ namespace SeleniumTests
         protected void WaitForElement(By locator, int timeoutSeconds = 10)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
-            wait.Until(ExpectedConditions.PresenceOfElementLocated(locator));
+            wait.Until(d => d.FindElement(locator));
         }
 
         protected IWebElement FindElement(By locator)
