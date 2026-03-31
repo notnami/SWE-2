@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const snackList = document.getElementById("snackList");
     const addInput = document.getElementById("food-name");
-    const addBtn = document.getElementById("add-btn");
-    const searchBtn = document.getElementById("search-btn");
+    const addBtn = document.getElementsByClassName("add-btn");
+    const searchBtn = document.getElementsByClassName("search-btn");
 
     const intakeList = document.getElementById("intakeList");
     const totalCaloriesDisplay = document.getElementById("totalCalories");
