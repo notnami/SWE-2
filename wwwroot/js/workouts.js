@@ -1,6 +1,6 @@
 const workoutName = document.getElementById("workout-name");
 const durationInput = document.getElementById("duration");
-const addBtn = document.getElementById("addWorkoutBtn");
+const addBtn = document.getElementsByClassName("addWorkoutBtn")[0];
 const workoutList = document.getElementById("workoutList");
 const totalCaloriesDisplay = document.getElementById("totalCalories");
 

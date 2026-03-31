@@ -51,17 +51,6 @@ input {
     border: 1px solid #555;
 }
 
-/* Button */
-/*button {
-    margin-top: 10px;
-    padding: 10px;
-    width: 35%;
-    background-color: green;
-    color: white;
-    border: solid black 1px;
-    border-radius: 25px;
-}
-*/
 /* List */
 ul {
     list-style: none;

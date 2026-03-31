@@ -42,22 +42,16 @@ header {
 
 .favorites-container li {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #aaa;
     font-size: 1.1rem;
 }
 
-.remove-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    cursor: pointer;
+.favorites-container li span {
+    text-align: left;
 }
 
-footer {
-    font-size: small;
-    text-align: center;
+.remove-btn {
+    margin-left: auto;   /* pushes button to the far right */
 }

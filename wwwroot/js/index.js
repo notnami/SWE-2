@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (userData) {
             header.textContent = `Welcome back, ${userData.username}!`;
-            subHeader.textContent = `Weight: ${userData.weight || "N/A"} lbs | Height: ${userData.height || "N/A"} in`;
 
             document.getElementById("profileUsername").textContent = `Username: ${userData.username}`;
             document.getElementById("profileWeight").textContent = `Weight: ${userData.weight || "N/A"} lbs`;
