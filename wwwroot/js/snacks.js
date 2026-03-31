@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const snackList = document.getElementById("snackList");
     const addInput = document.getElementById("food-name");
-    const addBtn = document.getElementsByClassName("add-btn");
-    const searchBtn = document.getElementsByClassName("search-btn");
+    const addBtn = document.querySelector(".add-btn");
+    const searchBtn = document.querySelector(".search-btn");
 
     const intakeList = document.getElementById("intakeList");
     const totalCaloriesDisplay = document.getElementById("totalCalories");
@@ -121,11 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         totalCaloriesDisplay.textContent = total + " kcal";
     }
-
-    // Search
-    searchInput.addEventListener("input", () => {
-        renderList(searchInput.value);
-    });
 
     // Init
     renderList();
