@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const snackList = document.getElementById("snackList");
     const addInput = document.getElementById("food-name");
     const addBtn = document.getElementById("add-btn");
+    const searchBtn = document.getElementById("search-btn");
 
     const intakeList = document.getElementById("intakeList");
     const totalCaloriesDisplay = document.getElementById("totalCalories");
@@ -83,6 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         addInput.value = "";
         renderIntake();
+    });
+
+    // Search snacks
+    searchBtn.addEventListener("click", () => {
+        renderList(searchInput.value);
     });
 
     // Render intake
