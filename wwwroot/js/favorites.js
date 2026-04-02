@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         favorites.forEach((snack, index) => {
             const li = document.createElement("li");
-            li.textContent = snack;
+
+            const textSpan = document.createElement("span");
+            textSpan.textContent = snack;
+            li.appendChild(textSpan);
 
             const removeBtn = document.createElement("button");
             removeBtn.textContent = "Remove";
-            removeBtn.classList.add("remove-btn");
+            removeBtn.classList.add("btn", "btn-outline-danger", "btn-sm", "remove-btn");
 
             removeBtn.addEventListener("click", () => {
                 removeFavorite(index);

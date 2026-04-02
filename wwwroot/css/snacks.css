@@ -51,17 +51,6 @@ input {
     border: 1px solid #555;
 }
 
-/* Button */
-button {
-    margin-top: 10px;
-    padding: 10px;
-    width: 95%;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 8px;
-}
-
 /* List */
 ul {
     list-style: none;
@@ -99,3 +88,8 @@ li {
     font-size: 1.5rem;
     font-weight: bold;
 } 
+
+footer {
+    font-size: small;
+    text-align: center;
+}

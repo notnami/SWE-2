@@ -27,6 +27,11 @@ body {
     border-bottom: 3px solid green;
 }
 
+/* Header */
+header {
+    margin: 20px;
+}
+
 /* Sections */
 section {
     max-width: 500px;
@@ -40,19 +45,11 @@ section {
 input, select {
     width: 90%;
     padding: 8px;
-    margin: 10px auto;
-    display: block;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #555;
 }
 
-/* Button */
-button {
-    padding: 10px;
-    width: 95%;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 8px;
-}
 
 /* List */
 ul {
@@ -80,4 +77,9 @@ li {
 .calories p {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+footer {
+    font-size: small;
+    text-align: center;
 }
