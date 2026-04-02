@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 
-namespace SeleniumTests.Pages
+namespace Tests.Pages
 {
     public class FavoritesPage
     {

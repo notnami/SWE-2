@@ -1,9 +1,9 @@
 using NUnit.Framework;
-using SeleniumTests.Pages;
+using Tests.Pages;
 using OpenQA.Selenium;
 using System.Linq;
 
-namespace SeleniumTests.PageTests
+namespace Tests.PageTests
 {
     [TestFixture]
     public class SnacksTests : BaseTest

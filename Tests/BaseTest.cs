@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
 using System;
 
-namespace SeleniumTests
+namespace Tests
 {
     public class BaseTest
     {

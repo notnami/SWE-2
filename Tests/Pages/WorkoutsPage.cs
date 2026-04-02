@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.ObjectModel;
 
-namespace SeleniumTests.Pages
+namespace Tests.Pages
 {
     public class WorkoutsPage
     {

@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using SeleniumTests.Pages;
+using Tests.Pages;
 
-namespace SeleniumTests.PageTests
+namespace Tests.PageTests
 {
     [TestFixture]
     public class CaloriesTests : BaseTest
