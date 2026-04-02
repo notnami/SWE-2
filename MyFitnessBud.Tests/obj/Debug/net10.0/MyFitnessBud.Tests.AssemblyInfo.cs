@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyFitnessBud.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb31622d469d66afa661ccdefbc27a3a33f3ccdc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a382d2c692958190571cf028eb76821e9c4c3b1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyFitnessBud.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyFitnessBud.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
