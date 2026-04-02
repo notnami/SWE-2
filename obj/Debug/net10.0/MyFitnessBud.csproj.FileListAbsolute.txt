@@ -1,0 +1,10 @@
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.csproj.AssemblyReference.cache
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.AssemblyInfoInputs.cache
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.AssemblyInfo.cs
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.csproj.CoreCompileInputs.cache
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.RazorAssemblyInfo.cache
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.RazorAssemblyInfo.cs
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.sourcelink.json
