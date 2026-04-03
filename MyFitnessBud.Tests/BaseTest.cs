@@ -1,6 +1,3 @@
-using Microsoft.Playwright;
-using Xunit;
-
 namespace MyFitnessBud.Tests
 {
     public abstract class BaseTest : IAsyncLifetime

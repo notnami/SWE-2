@@ -1,5 +1,3 @@
-using Xunit;
-using Microsoft.Playwright;
 using MyFitnessBud.Tests.Pages;
 
 namespace MyFitnessBud.Tests.PageTests

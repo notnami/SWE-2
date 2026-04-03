@@ -1,4 +1,3 @@
-using Xunit;
 using MyFitnessBud.Tests.Pages;
 
 namespace MyFitnessBud.Tests.PageTests

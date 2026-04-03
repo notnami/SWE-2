@@ -1,5 +1,3 @@
-using Microsoft.Playwright;
-
 namespace MyFitnessBud.Tests.Pages
 {
     public class FavoritesPage
