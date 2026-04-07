@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Run .NET Playwright Tests
 on:
   push:
     branches: [ main, master ]
@@ -7,21 +7,47 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Start web app
+        run: |
+          dotnet run --project MyFitnessBud.csproj --urls http://localhost:5161 &
+          for i in {1..30}; do
+            if curl -sSf http://localhost:5161 >/dev/null; then
+              echo "Server is ready";
+              break;
+            fi;
+            echo "Waiting for web app...";
+            sleep 2;
+          done
+
+      - name: Run .NET tests
+        run: dotnet test MyFitnessBud.Tests/MyFitnessBud.Tests.csproj --configuration Release --no-restore
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
