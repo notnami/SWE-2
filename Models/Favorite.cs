@@ -13,7 +13,7 @@ namespace MyFitnessBud.Models
         public int UserId { get; set; }
 
         [Required]
-        public string ProductCode { get; set; } // OpenFoodFacts barcode
+        public string ProductCode { get; set; }
 
         public DateTime SavedAt { get; set; } = DateTime.UtcNow;
 
