@@ -29,7 +29,9 @@ namespace MyFitnessBud.Tests.PageTests
 
             // Assert
             var favoriteItems = await _favoritesPage.GetFavoriteItems();
-            Assert.Empty(favoriteItems);
+            Assert.Single(favoriteItems);
+            var text = await favoriteItems[0].TextContentAsync();
+            Assert.Equal("No favorites added yet.", text);
         }
 
         [Fact]

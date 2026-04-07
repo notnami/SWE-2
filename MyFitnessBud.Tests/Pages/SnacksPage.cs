@@ -85,7 +85,7 @@ namespace MyFitnessBud.Tests.Pages
             var snackItems = await GetSnackItems();
             foreach (var item in snackItems)
             {
-                var nameSpan = item.Locator("span");
+                var nameSpan = item.Locator("span:not(.star)");
                 var text = await nameSpan.TextContentAsync();
                 if (text == snackName)
                 {
