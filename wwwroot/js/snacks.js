@@ -1,128 +1,146 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const searchInput = document.getElementById("searchInput");
     const snackList = document.getElementById("snackList");
-    const addInput = document.getElementById("food-name");
-    const addBtn = document.querySelector(".add-btn");
     const searchBtn = document.querySelector(".search-btn");
 
-    const intakeList = document.getElementById("intakeList");
-    const totalCaloriesDisplay = document.getElementById("totalCalories");
+    const API_BASE = "http://localhost:5161";
+    const loggedInUser = localStorage.getItem("loggedInUser");
 
-    // Snack list
-    const snacks = [
-        "Apple", "Banana", "Granola Bar", "Trail Mix",
-        "Yogurt", "Protein Bar", "Popcorn", "Chips"
-    ];
+    let snacks = [];
+    let favoriteCodes = [];
 
-    // Calories database
-    const calorieMap = {
-        "apple": 95,
-        "banana": 105,
-        "granola bar": 150,
-        "trail mix": 200,
-        "yogurt": 120,
-        "protein bar": 220,
-        "popcorn": 100,
-        "chips": 240
-    };
+    async function loadFavorites() {
+        if (!loggedInUser) return;
 
-    // Load data
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    let intake = JSON.parse(localStorage.getItem("intake")) || [];
+        try {
+            const response = await fetch(
+                `${API_BASE}/api/favorites?loggedInUser=${encodeURIComponent(loggedInUser)}`
+            );
 
-    // Render snacks
-    function renderList(filter = "") {
+            if (!response.ok) throw new Error("Could not load favorites");
+
+            const data = await response.json();
+            favoriteCodes = data.map(item => item.productCode);
+        } catch (error) {
+            console.error("Error loading favorites:", error);
+        }
+    }
+
+    function renderList(items = []) {
         snackList.innerHTML = "";
 
-        snacks
-            .filter(snack => snack.toLowerCase().includes(filter.toLowerCase()))
-            .forEach(snack => {
-
-                const li = document.createElement("li");
-
-                const name = document.createElement("span");
-                name.textContent = snack;
-
-                const star = document.createElement("span");
-                star.innerHTML = favorites.includes(snack) ? "★" : "☆";
-                star.classList.add("star");
-
-                if (favorites.includes(snack)) {
-                    star.classList.add("fav");
-                }
-
-                star.addEventListener("click", () => toggleFavorite(snack));
-
-                li.appendChild(name);
-                li.appendChild(star);
-                snackList.appendChild(li);
-            });
-    }
-
-    // Favorites
-    function toggleFavorite(snack) {
-        if (favorites.includes(snack)) {
-            favorites = favorites.filter(item => item !== snack);
-        } else {
-            favorites.push(snack);
+        if (!items.length) {
+            snackList.innerHTML = "<li>No snacks found.</li>";
+            return;
         }
 
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        renderList(searchInput.value);
-    }
-
-    // Add intake
-    addBtn.addEventListener("click", () => {
-        const food = addInput.value.trim().toLowerCase();
-        if (food === "") return;
-
-        const calories = calorieMap[food] || 100;
-
-        intake.push({ name: food, calories });
-        localStorage.setItem("intake", JSON.stringify(intake));
-
-        addInput.value = "";
-        renderIntake();
-    });
-
-    // Search snacks
-    searchBtn.addEventListener("click", () => {
-        renderList(searchInput.value);
-    });
-
-    // Render intake
-    function renderIntake() {
-        intakeList.innerHTML = "";
-        let total = 0;
-
-        intake.forEach((item, index) => {
+        items.forEach(snack => {
             const li = document.createElement("li");
 
-            const text = document.createElement("span");
-            text.textContent = `${item.name} = ${item.calories} cal`;
+            const name = document.createElement("span");
+            name.textContent = snack.name;
 
-            total += item.calories;
+            const star = document.createElement("span");
+            const isFav = favoriteCodes.includes(snack.productCode);
 
-            const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "X";
-            deleteBtn.classList.add("delete-btn");
+            star.innerHTML = isFav ? "★" : "☆";
+            star.classList.add("star");
+            if (isFav) star.classList.add("fav");
 
-            deleteBtn.addEventListener("click", () => {
-                intake.splice(index, 1);
-                localStorage.setItem("intake", JSON.stringify(intake));
-                renderIntake();
+            star.addEventListener("click", async () => {
+                await toggleFavorite(snack);
             });
 
-            li.appendChild(text);
-            li.appendChild(deleteBtn);
-            intakeList.appendChild(li);
+            li.appendChild(name);
+            li.appendChild(star);
+            snackList.appendChild(li);
         });
-
-        totalCaloriesDisplay.textContent = total + " kcal";
     }
 
-    // Init
-    renderList();
-    renderIntake();
+    async function searchSnacks(query) {
+        if (!query.trim()) {
+            snacks = [];
+            renderList([]);
+            return;
+        }
+
+        try {
+            const response = await fetch(
+                `${API_BASE}/api/off/search?q=${encodeURIComponent(query)}`
+            );
+
+            if (!response.ok) throw new Error("Search failed");
+
+            const data = await response.json();
+
+            snacks = data.map(item => ({
+                productCode: item.productCode,
+                name: item.name,
+                imageUrl: item.imageUrl,
+                allergens: item.allergens,
+                ingredientsAvailable: item.ingredientsAvailable
+            }));
+
+            renderList(snacks);
+        } catch (error) {
+            console.error("Error searching snacks:", error);
+            snackList.innerHTML = "<li>Could not load snack results.</li>";
+        }
+    }
+
+    async function toggleFavorite(snack) {
+        if (!loggedInUser) {
+            alert("Please log in first.");
+            return;
+        }
+
+        const isFav = favoriteCodes.includes(snack.productCode);
+
+        try {
+            if (isFav) {
+                const response = await fetch(
+                    `${API_BASE}/api/favorites/${encodeURIComponent(snack.productCode)}?loggedInUser=${encodeURIComponent(loggedInUser)}`,
+                    { method: "DELETE" }
+                );
+
+                if (!response.ok) throw new Error("Remove failed");
+
+                favoriteCodes = favoriteCodes.filter(code => code !== snack.productCode);
+            } else {
+                const response = await fetch(`${API_BASE}/api/favorites`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        loggedInUser,
+                        productCode: snack.productCode,
+                        name: snack.name,
+                        imageUrl: snack.imageUrl,
+                        allergens: snack.allergens,
+                        ingredientsAvailable: snack.ingredientsAvailable
+                    })
+                });
+
+                if (!response.ok) throw new Error("Save failed");
+
+                favoriteCodes.push(snack.productCode);
+            }
+
+            renderList(snacks);
+        } catch (error) {
+            console.error("Favorite toggle error:", error);
+            alert("Could not update favorite.");
+        }
+    }
+
+    searchBtn.addEventListener("click", () => {
+        searchSnacks(searchInput.value);
+    });
+
+    searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            searchSnacks(searchInput.value);
+        }
+    });
+
+    loadFavorites();
 });
