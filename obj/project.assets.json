@@ -566,80 +566,6 @@
           }
         }
       },
-      "NUnit/4.5.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/nunit.framework.dll": {
-            "related": ".legacy.xml;.xml"
-          },
-          "lib/net8.0/nunit.framework.legacy.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/nunit.framework.dll": {
-            "related": ".legacy.xml;.xml"
-          },
-          "lib/net8.0/nunit.framework.legacy.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/NUnit.props": {}
-        }
-      },
-      "NUnit3TestAdapter/4.6.0": {
-        "type": "package",
-        "build": {
-          "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
-        }
-      },
-      "Selenium.Support/4.41.0": {
-        "type": "package",
-        "dependencies": {
-          "Selenium.WebDriver": "4.41.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/WebDriver.Support.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/WebDriver.Support.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Selenium.WebDriver/4.41.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/WebDriver.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/Selenium.WebDriver.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux/native/selenium-manager": {
-            "assetType": "native",
-            "rid": "linux"
-          },
-          "runtimes/osx/native/selenium-manager": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/win/native/selenium-manager.exe": {
-            "assetType": "native",
-            "rid": "win"
-          }
-        }
-      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.11": {
         "type": "package",
         "dependencies": {
@@ -2757,100 +2683,6 @@
         "packageIcon.png"
       ]
     },
-    "NUnit/4.5.1": {
-      "sha512": "x1sIqU9i0IkxqFayqthzmJs/75jTMbrfNMixj4vtfTi7rRzGbtuY27V+iAhfTY02u5k2qvW3QBGM414OG4q8Lw==",
-      "type": "package",
-      "path": "nunit/4.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "NOTICES.md",
-        "README.md",
-        "THIRD_PARTY_NOTICES.md",
-        "build/NUnit.props",
-        "icon.png",
-        "lib/net462/nunit.framework.dll",
-        "lib/net462/nunit.framework.legacy.dll",
-        "lib/net462/nunit.framework.legacy.xml",
-        "lib/net462/nunit.framework.xml",
-        "lib/net6.0/nunit.framework.dll",
-        "lib/net6.0/nunit.framework.legacy.dll",
-        "lib/net6.0/nunit.framework.legacy.xml",
-        "lib/net6.0/nunit.framework.xml",
-        "lib/net8.0/nunit.framework.dll",
-        "lib/net8.0/nunit.framework.legacy.dll",
-        "lib/net8.0/nunit.framework.legacy.xml",
-        "lib/net8.0/nunit.framework.xml",
-        "nunit.4.5.1.nupkg.sha512",
-        "nunit.nuspec"
-      ]
-    },
-    "NUnit3TestAdapter/4.6.0": {
-      "sha512": "R7e1+a4vuV/YS+ItfL7f//rG+JBvVeVLX4mHzFEZo4W1qEKl8Zz27AqvQSAqo+BtIzUCo4aAJMYa56VXS4hudw==",
-      "type": "package",
-      "path": "nunit3testadapter/4.6.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net462/NUnit3.TestAdapter.dll",
-        "build/net462/NUnit3.TestAdapter.pdb",
-        "build/net462/NUnit3TestAdapter.props",
-        "build/net462/nunit.engine.api.dll",
-        "build/net462/nunit.engine.core.dll",
-        "build/net462/nunit.engine.dll",
-        "build/net462/testcentric.engine.metadata.dll",
-        "build/netcoreapp3.1/NUnit3.TestAdapter.dll",
-        "build/netcoreapp3.1/NUnit3.TestAdapter.pdb",
-        "build/netcoreapp3.1/NUnit3TestAdapter.props",
-        "build/netcoreapp3.1/nunit.engine.api.dll",
-        "build/netcoreapp3.1/nunit.engine.core.dll",
-        "build/netcoreapp3.1/nunit.engine.dll",
-        "build/netcoreapp3.1/testcentric.engine.metadata.dll",
-        "docs/README.md",
-        "nunit3testadapter.4.6.0.nupkg.sha512",
-        "nunit3testadapter.nuspec",
-        "nunit_256.png"
-      ]
-    },
-    "Selenium.Support/4.41.0": {
-      "sha512": "ZKUuiHuJKUV/7uC1eF81zSb8w2RA+JlkC1/yeM99XAa3Q8a2PgyHVA2MH9FHzufGO3nJXUe0RIx2wbBdVDgioA==",
-      "type": "package",
-      "path": "selenium.support/4.41.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/netstandard2.0/WebDriver.Support.dll",
-        "lib/netstandard2.0/WebDriver.Support.xml",
-        "selenium.support.4.41.0.nupkg.sha512",
-        "selenium.support.nuspec"
-      ]
-    },
-    "Selenium.WebDriver/4.41.0": {
-      "sha512": "oQPPzUGYy7M5+m3cMlGUKiswVLX/TbGySKH0jHsT0B9ZNfPZO6b0aqKNopR0FmDbSgjUsHoA9Vdur81/WW4DGg==",
-      "type": "package",
-      "path": "selenium.webdriver/4.41.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "build/Selenium.WebDriver.targets",
-        "buildTransitive/Selenium.WebDriver.targets",
-        "icon.png",
-        "lib/net462/WebDriver.dll",
-        "lib/net462/WebDriver.xml",
-        "lib/net8.0/WebDriver.dll",
-        "lib/net8.0/WebDriver.xml",
-        "lib/netstandard2.0/WebDriver.dll",
-        "lib/netstandard2.0/WebDriver.xml",
-        "runtimes/linux/native/selenium-manager",
-        "runtimes/osx/native/selenium-manager",
-        "runtimes/win/native/selenium-manager.exe",
-        "selenium.webdriver.4.41.0.nupkg.sha512",
-        "selenium.webdriver.nuspec"
-      ]
-    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.11": {
       "sha512": "DC4nA7yWnf4UZdgJDF+9Mus4/cb0Y3Sfgi3gDnAoKNAIBwzkskNAbNbyu+u4atT0ruVlZNJfwZmwiEwE5oz9LQ==",
       "type": "package",
@@ -3347,11 +3179,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.3",
       "Microsoft.Playwright >= 1.58.0",
-      "NUnit >= 4.5.1",
-      "NUnit3TestAdapter >= 4.6.0",
-      "Selenium.Support >= 4.41.0",
-      "Selenium.WebDriver >= 4.41.0",
-      "Xunit >= 2.9.3"
+      "xunit >= 2.9.3"
     ]
   },
   "packageFolders": {
@@ -3423,23 +3251,7 @@
             "target": "Package",
             "version": "[1.58.0, )"
           },
-          "NUnit": {
-            "target": "Package",
-            "version": "[4.5.1, )"
-          },
-          "NUnit3TestAdapter": {
-            "target": "Package",
-            "version": "[4.6.0, )"
-          },
-          "Selenium.Support": {
-            "target": "Package",
-            "version": "[4.41.0, )"
-          },
-          "Selenium.WebDriver": {
-            "target": "Package",
-            "version": "[4.41.0, )"
-          },
-          "Xunit": {
+          "xunit": {
             "target": "Package",
             "version": "[2.9.3, )"
           }
