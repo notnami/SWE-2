@@ -74,8 +74,8 @@ namespace MyFitnessBud.Tests.PageTests
             var workoutItems = await _workoutsPage.GetWorkoutItems();
             Assert.Equal(2, workoutItems.Count);
             var totalCalories = await _workoutsPage.GetTotalCalories();
-            // Walking: 3.5 * 60 * 0.5 = 105, Running: 8.3 * 60 * 0.5 = 249, Total: 354
-            Assert.Equal("354 kcal", totalCalories);
+            // Walking: 3.5 * 60 * 0.5 = 105, Running: 8 * 60 * 0.5 = 240, Total: 345
+            Assert.Equal("345 kcal", totalCalories);
         }
 
         [Fact]

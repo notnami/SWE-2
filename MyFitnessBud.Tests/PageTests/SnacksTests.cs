@@ -26,7 +26,7 @@ namespace MyFitnessBud.Tests.PageTests
             // Assert
             var snackItems = await _snacksPage.GetSnackItems();
             Assert.Single(snackItems);
-            var itemText = await snackItems[0].Locator("span").TextContentAsync();
+            var itemText = await snackItems[0].Locator("span:not(.star)").TextContentAsync();
             Assert.Equal("Apple", itemText);
         }
 
@@ -60,7 +60,7 @@ namespace MyFitnessBud.Tests.PageTests
             ILocator? appleItem = null;
             foreach (var item in snackItems)
             {
-                var text = await item.Locator("span").TextContentAsync();
+                var text = await item.Locator("span:not(.star)").TextContentAsync();
                 if (text == "Apple")
                 {
                     appleItem = item;
