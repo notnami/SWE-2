@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[10.0.3, )"
             },
+            "Microsoft.Playwright": {
+              "target": "Package",
+              "version": "[1.58.0, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[4.5.1, )"
@@ -80,6 +84,10 @@
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.41.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [
