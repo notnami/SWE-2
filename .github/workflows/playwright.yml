@@ -27,11 +27,14 @@ jobs:
       - name: Restore test packages
         run: dotnet restore MyFitnessBud.Tests/MyFitnessBud.Tests.csproj
 
+      - name: Build test project
+        run: dotnet build MyFitnessBud.Tests/MyFitnessBud.Tests.csproj --configuration Release --no-restore
+
       - name: Install npm dependencies
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install chromium
+        run: pwsh MyFitnessBud.Tests/bin/Release/net10.0/playwright.ps1 install chromium
 
       - name: Start web app
         run: |
