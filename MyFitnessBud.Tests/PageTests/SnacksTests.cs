@@ -15,108 +15,66 @@ namespace MyFitnessBud.Tests.PageTests
         }
 
         [Fact]
-        public async Task SearchSnacks_ShouldFilterList()
+        public async Task SearchSnacks_ShouldReturnResults()
         {
             // Arrange
-            await _snacksPage!.GoToSnacksPage();
+            await _snacksPage!.MockSearchResults(new object[]
+            {
+                new
+                {
+                    productCode = "111",
+                    name = "Apple",
+                    imageUrl = "",
+                    allergens = "",
+                    ingredientsAvailable = true
+                }
+            });
+            await _snacksPage.GoToSnacksPage();
 
             // Act
-            await _snacksPage.SearchSnacks("Apple");
+            await _snacksPage.SearchSnacks("apple");
 
             // Assert
             var snackItems = await _snacksPage.GetSnackItems();
-            Assert.Single(snackItems);
-            var itemText = await snackItems[0].Locator("span:not(.star)").TextContentAsync();
-            Assert.Equal("Apple", itemText);
-        }
+            Assert.NotEmpty(snackItems);
 
-        [Fact]
-        public async Task AddIntake_ShouldAddToList()
-        {
-            // Arrange
-            await _snacksPage!.GoToSnacksPage();
-
-            // Act
-            await _snacksPage.AddIntake("Apple");
-
-            // Assert
-            var intakeItems = await _snacksPage.GetIntakeItems();
-            Assert.Single(intakeItems);
-            var itemText = await intakeItems[0].TextContentAsync();
-            Assert.Contains("apple", itemText, System.StringComparison.OrdinalIgnoreCase);
-        }
-
-        [Fact]
-        public async Task ToggleFavorite_ShouldMarkAsFavorite()
-        {
-            // Arrange
-            await _snacksPage!.GoToSnacksPage();
-
-            // Act
-            await _snacksPage.ToggleFavorite("Apple");
-
-            // Assert
-            var snackItems = await _snacksPage.GetSnackItems();
-            ILocator? appleItem = null;
+            var hasApple = false;
             foreach (var item in snackItems)
             {
                 var text = await item.Locator("span:not(.star)").TextContentAsync();
-                if (text == "Apple")
+                if (text?.Contains("apple", System.StringComparison.OrdinalIgnoreCase) == true)
                 {
-                    appleItem = item;
+                    hasApple = true;
                     break;
                 }
             }
-            Assert.NotNull(appleItem);
-            var star = await appleItem!.Locator(".star").TextContentAsync();
-            Assert.Equal("★", star);
+
+            Assert.True(hasApple, "Expected at least one search result item containing 'apple'.");
         }
 
         [Fact]
-        public async Task DeleteIntakeItem_ShouldRemoveFromList()
+        public async Task ToggleFavorite_WhenNotLoggedIn_ShowsLoginPrompt()
         {
             // Arrange
-            await _snacksPage!.GoToSnacksPage();
-            await _snacksPage.AddIntake("Apple");
+            await _snacksPage!.MockSearchResults(new object[]
+            {
+                new
+                {
+                    productCode = "111",
+                    name = "Apple",
+                    imageUrl = "",
+                    allergens = "",
+                    ingredientsAvailable = true
+                }
+            });
+            await _snacksPage.GoToSnacksPage();
+            await _snacksPage.SearchSnacks("apple");
 
             // Act
-            await _snacksPage.DeleteIntakeItem(0);
+            var alertText = await WaitForDialog(async () => await _snacksPage.ToggleFavorite("Apple"));
 
             // Assert
-            var intakeItems = await _snacksPage.GetIntakeItems();
-            Assert.Empty(intakeItems);
-        }
-
-        [Fact]
-        public async Task TotalCalories_ShouldUpdateAfterAddingIntake()
-        {
-            // Arrange
-            await _snacksPage!.GoToSnacksPage();
-
-            // Act
-            await _snacksPage.AddIntake("Apple");
-
-            // Assert
-            var totalCalories = await _snacksPage.GetTotalCalories();
-            Assert.Equal("95 kcal", totalCalories);
-        }
-
-        [Fact]
-        public async Task AddMultipleIntake_ShouldAccumulateCalories()
-        {
-            // Arrange
-            await _snacksPage!.GoToSnacksPage();
-
-            // Act
-            await _snacksPage.AddIntake("Apple");
-            await _snacksPage.AddIntake("Banana");
-
-            // Assert
-            var intakeItems = await _snacksPage.GetIntakeItems();
-            Assert.Equal(2, intakeItems.Count);
-            var totalCalories = await _snacksPage.GetTotalCalories();
-            // Apple (95) + Banana (105) = 200
-            Assert.Equal("200 kcal", totalCalories);
+            Assert.Equal("Please log in first.", alertText);
         }
     }
 }

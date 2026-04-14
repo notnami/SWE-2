@@ -26,6 +26,11 @@ namespace MyFitnessBud.Tests.Pages
             return items;
         }
 
+        public async Task SetFavorites(IEnumerable<string> favorites)
+        {
+            await _page.EvaluateAsync(@"favorites => localStorage.setItem('favorites', JSON.stringify(favorites))", favorites);
+        }
+
         public async Task RemoveFavorite(int index)
         {
             var favoriteItems = await GetFavoriteItems();

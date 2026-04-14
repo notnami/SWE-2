@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace MyFitnessBud.Tests.Pages
 {
     public class SnacksPage
@@ -33,6 +35,15 @@ namespace MyFitnessBud.Tests.Pages
         {
             await EnterSearchText(text);
             await ClickSearch();
+            await WaitForSearchResults(30000);
+        }
+
+        public async Task WaitForSearchResults(int timeoutMs = 30000)
+        {
+            await _page.Locator("#snackList li:has(.star)").First.WaitForAsync(new LocatorWaitForOptions
+            {
+                Timeout = timeoutMs
+            });
         }
 
         public async Task EnterFoodName(string food)
@@ -53,7 +64,7 @@ namespace MyFitnessBud.Tests.Pages
 
         public async Task<List<ILocator>> GetSnackItems()
         {
-            var locator = SnackList.Locator("li");
+            var locator = SnackList.Locator("li:has(.star)");
             int count = await locator.CountAsync();
             var items = new List<ILocator>();
             for (int i = 0; i < count; i++)
@@ -61,6 +72,19 @@ namespace MyFitnessBud.Tests.Pages
                 items.Add(locator.Nth(i));
             }
             return items;
+        }
+
+        public async Task MockSearchResults(object[] results)
+        {
+            await _page.RouteAsync("**/api/off/search**", async route =>
+            {
+                await route.FulfillAsync(new RouteFulfillOptions
+                {
+                    Status = 200,
+                    ContentType = "application/json",
+                    Body = JsonSerializer.Serialize(results)
+                });
+            });
         }
 
         public async Task<List<ILocator>> GetIntakeItems()
@@ -87,7 +111,7 @@ namespace MyFitnessBud.Tests.Pages
             {
                 var nameSpan = item.Locator("span:not(.star)");
                 var text = await nameSpan.TextContentAsync();
-                if (text == snackName)
+                if (!string.IsNullOrEmpty(text) && text.Contains(snackName, StringComparison.OrdinalIgnoreCase))
                 {
                     var star = item.Locator(".star").First;
                     await star.ClickAsync();

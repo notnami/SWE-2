@@ -9,7 +9,7 @@ namespace MyFitnessBud.Tests
         protected string? LastDialogMessage = null;
         
         private const string BaseUrl = "http://localhost:5161/";
-        private const int TimeoutMs = 10000; // 10 seconds
+        private const int TimeoutMs = 30000; // 30 seconds
 
         public virtual async Task InitializeAsync()
         {

@@ -388,12 +388,6 @@ C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\playwright.ps1
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\MyFitnessBud.staticwebassets.runtime.json
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\MyFitnessBud.staticwebassets.endpoints.json
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\NUnit3.TestAdapter.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\NUnit3.TestAdapter.pdb
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\nunit.engine.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\nunit.engine.api.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\nunit.engine.core.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\testcentric.engine.metadata.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\MyFitnessBud.exe
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\MyFitnessBud.deps.json
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\MyFitnessBud.runtimeconfig.json
@@ -419,10 +413,6 @@ C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\Mono.TextTemplating.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\Newtonsoft.Json.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\nunit.framework.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\nunit.framework.legacy.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\WebDriver.Support.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\WebDriver.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\SQLitePCLRaw.core.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -501,9 +491,6 @@ C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\linux\native\selenium-manager
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\osx\native\selenium-manager
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\win\native\selenium-manager.exe
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\bin\Debug\net10.0\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -551,7 +538,6 @@ C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\cxogz55ppm-{0}-yyvgmbnfq0-yyvgmbnfq0.gz
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\0cbhqj9fmg-{0}-sdwt8d8fts-sdwt8d8fts.gz
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\hm9y3e1hx8-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
-C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\9xg5rr36j0-{0}-a6nd4x1z1f-a6nd4x1z1f.gz
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\btxu12ba6z-{0}-t5tsyfqegt-t5tsyfqegt.gz
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\p66hyqgu0g-{0}-t1cqhe9u97-t1cqhe9u97.gz
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\gnnzykvqlc-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -629,3 +615,4 @@ C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.pdb
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\MyFitnessBud.genruntimeconfig.cache
 C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\ref\MyFitnessBud.dll
+C:\Users\Shane\OneDrive - East Tennessee State University\Assignments\CSCI-4350\SWE-2\obj\Debug\net10.0\compressed\9xg5rr36j0-{0}-pplacknnut-pplacknnut.gz

@@ -20,9 +20,8 @@ namespace MyFitnessBud.Tests.PageTests
         public async Task RemoveFavorite_ShouldRemoveFromList()
         {
             // Arrange
-            await _snacksPage!.GoToSnacksPage();
-            await _snacksPage.ToggleFavorite("Apple");
-            await _favoritesPage!.GoToFavoritesPage();
+            await _favoritesPage!.SetFavorites(new[] { "Apple" });
+            await _favoritesPage.GoToFavoritesPage();
 
             // Act
             await _favoritesPage.RemoveFavorite(0);
@@ -51,10 +50,8 @@ namespace MyFitnessBud.Tests.PageTests
         public async Task MultipleFavorites_ShouldDisplayAll()
         {
             // Arrange
-            await _snacksPage!.GoToSnacksPage();
-            await _snacksPage.ToggleFavorite("Apple");
-            await _snacksPage.ToggleFavorite("Banana");
-            await _favoritesPage!.GoToFavoritesPage();
+            await _favoritesPage!.SetFavorites(new[] { "Apple", "Banana" });
+            await _favoritesPage.GoToFavoritesPage();
 
             // Act & Assert
             var favoriteItems = await _favoritesPage.GetFavoriteItems();
