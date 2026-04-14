@@ -32,15 +32,17 @@ jobs:
 
       - name: Start web app
         run: |
-          dotnet run --project MyFitnessBud.csproj --urls http://localhost:5161 &
-          for i in {1..30}; do
-            if curl -sSf http://localhost:5161 >/dev/null; then
-              echo "Server is ready";
-              break;
-            fi;
-            echo "Waiting for web app...";
-            sleep 2;
-          done
+          Start-Process -FilePath dotnet -ArgumentList "run","--project","MyFitnessBud.csproj","--urls","http://localhost:5161" -NoWindow
+          for ($i = 1; $i -le 30; $i++) {
+            try {
+              Invoke-WebRequest -Uri http://localhost:5161 -ErrorAction Stop | Out-Null
+              Write-Host "Server is ready"
+              break
+            } catch {
+              Write-Host "Waiting for web app..."
+              Start-Sleep -Seconds 2
+            }
+          }
 
       - name: Run .NET tests
         run: dotnet test MyFitnessBud.Tests/MyFitnessBud.Tests.csproj --configuration Release --no-restore
