@@ -32,7 +32,7 @@ jobs:
 
       - name: Start web app
         run: |
-          Start-Process -FilePath dotnet -ArgumentList "run","--project","MyFitnessBud.csproj","--urls","http://localhost:5161" -NoWindow
+          Start-Process -FilePath dotnet -ArgumentList "run","--project","MyFitnessBud.csproj","--urls","http://localhost:5161" -WindowStyle Hidden
           for ($i = 1; $i -le 30; $i++) {
             try {
               Invoke-WebRequest -Uri http://localhost:5161 -ErrorAction Stop | Out-Null
