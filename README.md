@@ -140,7 +140,7 @@ __Version Control Strategy__
 
 __Branch Strategy__
 
-At this stage of development, the project uses a single-branch workflow. Since the team is small and development is tightly coordinated, changes are committed directly to main after testing locally. As the project scales, a feature-branch workflow may be adopted to improve parallel development and code review processes.
+Our project depends on our main branch with smaller, temporary branches being split off to test and implement individual features. This allows us to work on our different sections without risk of interfering with each other's work or accidentally pushing buggy code to the main branch before it is debugged. Such branches we've had include our databse and general backend testing. As the project scales, we may continue to add more feature-branch workflows to improve parallel development and code review processes.
 
 __Commit Standards__
 
