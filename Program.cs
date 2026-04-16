@@ -63,7 +63,6 @@ if (!app.Environment.IsDevelopment())
 // app.UseHttpsRedirection();
 
 app.UseHttpsRedirection();
-app.UseRouting();
 
 app.UseCors("FrontendPolicy");
 
@@ -71,6 +70,7 @@ app.UseAuthorization();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+app.UseRouting();
 app.MapStaticAssets();
 app.MapControllers();
 
