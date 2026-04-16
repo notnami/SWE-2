@@ -7,12 +7,23 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Get connection string from DATABASE_URL (Render) or from configuration
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL")
-    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+// Determine which database to use
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
+var isProduction = !string.IsNullOrEmpty(connectionString);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+if (isProduction)
+{
+    // Render: Use PostgreSQL from DATABASE_URL environment variable
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseNpgsql(connectionString));
+}
+else
+{
+    // Local development: Use SQLite
+    var defaultConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlite(defaultConnection));
+}
 
 builder.Services.AddHttpClient<OpenFoodFactsClient>(client =>
 {
