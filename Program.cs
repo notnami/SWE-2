@@ -67,6 +67,8 @@ app.UseCors("FrontendPolicy");
 
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapStaticAssets();
 app.MapControllers();
 
