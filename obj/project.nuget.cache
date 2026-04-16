@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "tZMozI36GxU=",
-  "success": false,
+  "dgSpecHash": "fobNGeF/Ajs=",
+  "success": true,
   "projectFilePath": "C:\\Users\\Shane\\OneDrive - East Tennessee State University\\Assignments\\CSCI-4350\\SWE-2\\MyFitnessBud.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shane\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -13,16 +13,16 @@
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\5.0.0\\microsoft.codeanalysis.csharp.workspaces.5.0.0.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\5.0.0\\microsoft.codeanalysis.workspaces.common.5.0.0.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.codeanalysis.workspaces.msbuild\\5.0.0\\microsoft.codeanalysis.workspaces.msbuild.5.0.0.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.3\\microsoft.data.sqlite.core.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.3\\microsoft.entityframeworkcore.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.3\\microsoft.entityframeworkcore.abstractions.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.3\\microsoft.entityframeworkcore.analyzers.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.3\\microsoft.entityframeworkcore.design.10.0.3.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.4\\microsoft.data.sqlite.core.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.4\\microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.4\\microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.4\\microsoft.entityframeworkcore.analyzers.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.design\\10.0.4\\microsoft.entityframeworkcore.design.10.0.4.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.4\\microsoft.entityframeworkcore.relational.10.0.4.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\10.0.3\\microsoft.entityframeworkcore.sqlite.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\10.0.3\\microsoft.entityframeworkcore.sqlite.core.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.3\\microsoft.entityframeworkcore.tools.10.0.3.nupkg.sha512",
-    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.3\\microsoft.extensions.dependencymodel.10.0.3.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\10.0.4\\microsoft.entityframeworkcore.sqlite.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\10.0.4\\microsoft.entityframeworkcore.sqlite.core.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.4\\microsoft.entityframeworkcore.tools.10.0.4.nupkg.sha512",
+    "C:\\Users\\Shane\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.4\\microsoft.extensions.dependencymodel.10.0.4.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.playwright\\1.58.0\\microsoft.playwright.1.58.0.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
@@ -49,17 +49,5 @@
     "C:\\Users\\Shane\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
     "C:\\Users\\Shane\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore from 10.0.4 to 10.0.3. Reference the package directly from the project to select a different version. \r\n MyFitnessBud -> Npgsql.EntityFrameworkCore.PostgreSQL 10.0.1 -> Microsoft.EntityFrameworkCore (>= 10.0.4 && < 11.0.0) \r\n MyFitnessBud -> Microsoft.EntityFrameworkCore (>= 10.0.3)",
-      "projectPath": "C:\\Users\\Shane\\OneDrive - East Tennessee State University\\Assignments\\CSCI-4350\\SWE-2\\MyFitnessBud.csproj",
-      "filePath": "C:\\Users\\Shane\\OneDrive - East Tennessee State University\\Assignments\\CSCI-4350\\SWE-2\\MyFitnessBud.csproj",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }
