@@ -1,6 +1,7 @@
 using MyFitnessBud.Data;
 using MyFitnessBud.Services;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +15,9 @@ var isProduction = !string.IsNullOrEmpty(connectionString);
 if (isProduction)
 {
     // Render: Use PostgreSQL from DATABASE_URL environment variable
+    var npgsqlBuilder = new NpgsqlConnectionStringBuilder(connectionString);
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseNpgsql(connectionString));
+        options.UseNpgsql(npgsqlBuilder.ConnectionString));
 }
 else
 {
