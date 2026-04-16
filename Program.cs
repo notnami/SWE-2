@@ -12,7 +12,7 @@ builder.Services.AddControllersWithViews();
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
 var isProduction = !string.IsNullOrEmpty(connectionString);
 
-if (isProduction)
+if (!isProduction)
 {
     // Render: Use PostgreSQL from DATABASE_URL environment variable
     var npgsqlBuilder = new NpgsqlConnectionStringBuilder(connectionString);
