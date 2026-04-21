@@ -1,4 +1,10 @@
 # MyFitnessBud
+### Performance/Test Metrics [Updated: 4/21/2026]
+- Test Pass/Fail Rate: Failed: 0, Passed: 28, Skipped: 0, Total: 28
+- Test Execution Time: 3 min 23 sec
+- Test Coverage: See TEST_COVERAGE_REPORT.md
+- Defect Density: None identified in last test run
+### To-Do
 - Use parameterized queries to prevent SQL injection
 - Use clear table names:
 	- Users
